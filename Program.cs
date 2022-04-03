@@ -10,18 +10,71 @@ namespace HW3
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Введите целое число:");
-            int Number = int.Parse(Console.ReadLine());
+            Console.WriteLine("Здравствуй, друг! Сколько у тебя карт?");
+            int cards = int.Parse(Console.ReadLine());
+            int cardssumm = 0;
+            Console.WriteLine("Ого! Давай посчитаем очки! \nДля карт с числовым номиналом введите цифру (6-10). \nДля вальта укажите - J, для дамы - Q, для короля - K, для туза - T\n ");
 
-            if (Number % 2 == 0)
+
+            for (int i = 1; i <= cards; i++)
             {
-                Console.WriteLine($"Четное число");
+                Console.Write($"Введите номинал карты номер {i}\n");
+                string cardvalue = Console.ReadLine();
+                int value;
+
+
+                switch (cardvalue)
+
+                {
+                    case "6":
+                        value = Convert.ToInt32(cardvalue);
+                        cardssumm = value + cardssumm;
+                        break;
+                    case "7":
+                        value = Convert.ToInt32(cardvalue);
+                        cardssumm = value + cardssumm;
+                        break;
+                    case "8":
+                        value = Convert.ToInt32(cardvalue);
+                        cardssumm = value + cardssumm;
+                        break;
+                    case "9":
+                        value = Convert.ToInt32(cardvalue);
+                        cardssumm = value + cardssumm;
+                        break;
+                    case "10":
+                        value = Convert.ToInt32(cardvalue);
+                        cardssumm = value + cardssumm;
+                        break;
+                    case "J":
+                        value = 10;
+                        cardssumm = value + cardssumm;
+                        break;
+                    case "Q":
+                        value = 10;
+                        cardssumm = value + cardssumm;
+                        break;
+                    case "K":
+                        value = 10;
+                        cardssumm = value + cardssumm;
+                        break;
+                    case "T":
+                        value = 10;
+                        cardssumm = value + cardssumm;
+                        break;
+                    default:
+                        Console.WriteLine("\nВведите корректный номинал карты:\n");
+                        i--;
+                        break;
+
+                }
+                
+
             }
-            else
-            {
-                Console.WriteLine($"Нечетное число");
-            }
+
+            Console.WriteLine($"Сумма карт на руках = {cardssumm}");
+            Console.ReadKey();
 
         }
-    }
+}
 }
